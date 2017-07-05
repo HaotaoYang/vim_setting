@@ -36,7 +36,7 @@ colorscheme murphy                              " 配色
 set guifont=Bitstream_Vera_Sans_Mono:h10:cANSI  " 字体
 set nu                                          " 行号
 set lines=100                                   " 设置显示行数
-set columns=150                                 " 设置显示列数
+set columns=160                                 " 设置显示列数
 set numberwidth=2                               " 行号栏目宽度
 set tabstop=4                                   " tab长度
 set autoindent                                  " 自动对齐
