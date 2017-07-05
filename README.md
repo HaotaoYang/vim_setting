@@ -34,6 +34,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 === 安装YouCompleteMe ===
 
+(安装过程下载太慢，备好梯子！！！)
 在.vimrc中添加下列代码
 Bundle 'Valloric/YouCompleteMe'
 保存退出后打开vim，在正常模式下输入
