@@ -4,7 +4,7 @@ vim setting:
 把vimrc配置文件放到用户目录/etc/vim/目录下
 把.vim目录放到用户根目录下~/
 
-然后进入vim，使用:PluginInstall就可以安装插件(其实不用这部，因为插件都在上面打包好了)。
+然后进入vim，使用:PluginInstall就可以安装插件。
 
 
 === vim-elixir ===
