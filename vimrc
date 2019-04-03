@@ -20,31 +20,33 @@ Plugin 'L9'
 Plugin 'git://git.wincent.com/command-t.git'
 " Plugin 'file:///home/gmarik/path/to/plugin'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Bundle 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'Lokaltog/vim-powerline'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'Lokaltog/vim-powerline'
 Plugin 'bling/vim-airline'
+Plugin 'fatih/vim-go'
+Plugin 'vim-erlang/vim-erlang-tags'
 Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
-Plugin 'vim-erlang/vim-erlang-tags'
 Plugin 'vim-gitgutter'
-Plugin 'dracula/vim'                            " 安装dracula主题, 安装后需要把~/.vim/bundle/vim/colors/目录下的dracula.vim拷贝到~/.vim/colors目录下
+Plugin 'dracula/vim'                            " 安装dracula主题插件, 安装完后需要把~/.vim/bundle/vim/colors/目录下的dracula.vim拷贝到~/.vim/colors目录下
 map <F6> :NERDTreeToggle<CR>                    " 使用F6打开树目录结构
 " colorscheme murphy                              " 配色
-colorscheme dracula                             " 新主题
+" colorscheme dracula                           " 新主题
 set guifont=Bitstream_Vera_Sans_Mono:h10:cANSI  " 字体
 set nu                                          " 行号
-set lines=100                                   " 设置显示行数
-set columns=160                                 " 设置显示列数
+set lines=55                                    " 设置显示行数
+set columns=180                                 " 设置显示列数
 set numberwidth=2                               " 行号栏目宽度
 set tabstop=4                                   " tab长度
 set autoindent                                  " 自动对齐
 set nowrap                                      " 不自动折行
+set backspace=2                                 " mac os delete按键实效
 syntax on                                       " 语法高亮
 set hlsearch                                    " 选中高亮
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936    " 设置gbk字符会有编码问题，设置字符集
@@ -61,14 +63,16 @@ hi Normal  ctermfg=252 ctermbg=none
 
 " 设置VIM状态栏
 set laststatus=2 "显示状态栏(默认值为1, 无法显示状态栏)
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" 以下为语法分析工具配置，此处屏蔽
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " powerline setting
 set guifont=PowerlineSymbols\for\Powerline
@@ -86,30 +90,31 @@ autocmd BufNewFile *.erl exec ":call SetTitle()"
 ""定义函数SetTitle，自动插入文件头 
 func SetTitle() 
     call setline(1,"\%%%-------------------------------------------------------------------") 
-    call append(line("."), "\%% File Name: ".expand("%")) 
-    call append(line(".")+1, "\%% Author: Holtom") 
-    call append(line(".")+2, "\%% Created Time: ".strftime("%c")) 
-    call append(line(".")+3, "\%% @doc ")
-    call append(line(".")+4, "\%% @end")
-    call append(line(".")+5, "\%%%-------------------------------------------------------------------")
-    call append(line(".")+6, "")
+    call append(line("."), "\%% @Module  : ".expand("%")) 
+    call append(line(".")+1, "\%% @Author  : Holtom") 
+    call append(line(".")+2, "\%% @Email   : 520023290@qq.com")
+    call append(line(".")+3, "\%% @Created : ".strftime("%c")) 
+    call append(line(".")+4, "\%% @doc ")
+    call append(line(".")+5, "\%% @end")
+    call append(line(".")+6, "\%%%-------------------------------------------------------------------")
     call append(line(".")+7, "")
     call append(line(".")+8, "")
-    call append(line(".")+9, "\%%====================================================================")
-    call append(line(".")+10, "\%% API")
-    call append(line(".")+11, "\%%====================================================================")
-    call append(line(".")+12, "")
+    call append(line(".")+9, "")
+    call append(line(".")+10, "\%%====================================================================")
+    call append(line(".")+11, "\%% API")
+    call append(line(".")+12, "\%%====================================================================")
     call append(line(".")+13, "")
     call append(line(".")+14, "")
-    call append(line(".")+15, "\%%====================================================================")
-    call append(line(".")+16, "\%% Supervisor callbacks")
-    call append(line(".")+17, "\%%====================================================================")
-    call append(line(".")+18, "")
+    call append(line(".")+15, "")
+    call append(line(".")+16, "\%%====================================================================")
+    call append(line(".")+17, "\%% Supervisor callbacks")
+    call append(line(".")+18, "\%%====================================================================")
     call append(line(".")+19, "")
     call append(line(".")+20, "")
-    call append(line(".")+21, "\%%====================================================================")
-    call append(line(".")+22, "\%% Internal functions")
-    call append(line(".")+23, "\%%====================================================================")
+    call append(line(".")+21, "")
+    call append(line(".")+22, "\%%====================================================================")
+    call append(line(".")+23, "\%% Internal functions")
+    call append(line(".")+24, "\%%====================================================================")
 endfunc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
