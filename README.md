@@ -6,16 +6,29 @@ vim setting:
 
 然后进入vim，使用:PluginInstall就可以安装插件。
 
+=== pathogen.vim ===
 
-=== vim-elixir ===
-
-安装vim-elixir可以使vim支持elixir，在这之前要先安装syntastic，执行下面命令：
+先安装pathogen.vim,在终端执行：
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-如果没有安装curl先安装：sudo apt-get install curl
-然后在vimrc配置文件中加上下面命令即可:
+在vimrc中配置：
 execute pathogen#infect()
+syntax on
+filetype plugin indent on
 
+=== dracula ===
+
+安装dracula主题：
+Plugin 'dracula/vim'
+使用：PluginInstall安装就可以把主题插件下载到~/.vim/bundle/vim/colors/目录下面，但是使用
+colorscheme dracula配色的时候会找不到该主题报错，需要把该目录下的dracula.vim拷贝到~/.vim/colors目录下就可以了
+
+=== 安装git插 ===
+Plugin 'vim-gitgutter'          " 修改时会显示修改与仓库版本的差异
+Plugin 'junegunn/gv.vim'        " 查看git提交记录, 命令 :GV
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'tpope/vim-fugitive'     " git包装器(这里注意:由于作者没有更新，使用这个命令安装后使用:GV命令查看提交记录时会有报错，可以到github上查看最新安装方式安装)
 
 === 安装ctrlp插件 ===
 
