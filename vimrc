@@ -73,7 +73,7 @@ hi Normal  ctermfg=252 ctermbg=none
 " 设置VIM状态栏
 set laststatus=2 "显示状态栏(默认值为1, 无法显示状态栏)
 
-let g:erlang_tags_auto_update = 1               " 自动更新tags(vim-erlang-tags插件配置)
+" let g:erlang_tags_auto_update = 1               " 自动更新tags(vim-erlang-tags插件配置)
 
 set statusline+=%{FugitiveStatusline()}
 set statusline+=%{gutentags#statusline()}
