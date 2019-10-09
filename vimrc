@@ -158,8 +158,10 @@ let g:limelight_conceal_ctermfg = 'gray'
 let g:limeligth_conceal_ctermfg = 240
 let g:limelight_default_coefficient = 0.7
 
-nnoremap <C-l> :bn<CR>
-nnoremap <C-h> :bp<CR>
+nnoremap <C-k> :m-2<CR>     " 把当前行向上移动
+nnoremap <C-j> :m+1<CR>     " 把当前行向下移动
+nnoremap <C-l> :bn<CR>      " 项目内模块向左切换
+nnoremap <C-h> :bp<CR>      " 项目内模块向右切换
 set encoding=utf-8
 set langmenu=zh_CN.UTF-8
 source $VIMRUNTIME/delmenu.vim
