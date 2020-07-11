@@ -29,11 +29,8 @@ filetype plugin indent on
 === dracula ===
 -----
 
-安装dracula主题：
+安装dracula主题：https://draculatheme.com/vim
 
-Plugin 'dracula/vim'
-
-使用：PluginInstall安装就可以把主题插件下载到~/.vim/bundle/vim/colors/目录下面，但是使用colorscheme dracula配色的时候会找不到该主题报错，需要把该目录下的dracula.vim拷贝到~/.vim/colors目录下就可以了
 
 === 安装git插 ===
 -----
