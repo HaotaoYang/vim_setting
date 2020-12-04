@@ -3,7 +3,7 @@ vim setting:
 
 安装vim之后：
 
-把vimrc配置文件放到用户目录/etc/vim/目录下,MaxOs是在~/目录
+把vimrc配置文件放到~/目录
 
 把.vim目录放到用户根目录下~/
 
@@ -26,11 +26,16 @@ syntax on
 
 filetype plugin indent on
 
+=== plug.vim ===
+-----
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 === dracula ===
 -----
 
 安装dracula主题：https://draculatheme.com/vim
-
 
 === 安装git插 ===
 -----

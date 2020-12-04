@@ -11,6 +11,7 @@ runtime! debian.vim
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -35,10 +36,17 @@ Plugin 'tpope/vim-eunuch'                       "
 Plugin 'tpope/vim-fugitive'                     " git包装器(这里注意:由于作者没有更新，使用这个命令安装后使用:GV命令查看提交记录时会有报错，可以到github上查看最新安装方式安装)
 Plugin 'tpope/vim-rhubarb'
 Plugin 'vim-airline/vim-airline-themes'         " 标签页主题插件
+Plugin 'vim-erlang/vim-erlang-omnicomplete'     " erlang补全插件
 Plugin 'vim-erlang/vim-erlang-tags'             " erlang跳转标志插件
 Plugin 'vim-gitgutter'                          " 修改时会显示修改与仓库版本的差异
 Plugin 'Valloric/YouCompleteMe'                 " 补全功能插件
 Plugin 'VundleVim/Vundle.vim'
+
+call vundle#end()            " required
+
+execute pathogen#infect()
+syntax on
+filetype plugin indent on    " required
 
 " 设置主题(需要提前安装：https://draculatheme.com/vim)
 packadd! dracula
@@ -96,7 +104,6 @@ let g:syntastic_check_on_wq = 1
 
 " powerline setting
 set guifont=PowerlineSymbols\for\Powerline
-set nocompatible
 set t_Co=256
 let g:Powerline_symbols = 'fancy'
 " 状态行颜色
@@ -113,10 +120,7 @@ let g:airline_right_sep = '◀'
 let g:airline_right_alt_sep = '❮'
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⎇'
-" let g:airline_left_sep = '▶'
-" let g:airline_left_alt_sep = '>'
-" let g:airline_right_sep = '◀'
-" let g:airline_right_alt_sep = '<'
+
 let g:airline_theme="luna"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
@@ -149,46 +153,6 @@ set langmenu=zh_CN.UTF-8
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""新文件标题""""""""""""""""""""""""
-"新建erlang时文件，自动插入文件头 
-autocmd BufNewFile *.erl exec ":call SetTitle()" 
-""定义函数SetTitle，自动插入文件头 
-func SetTitle() 
-    call setline(1,"\%%%-------------------------------------------------------------------") 
-    call append(line("."), "\%% @Module  : ".expand("%")) 
-    call append(line(".")+1, "\%% @Author  : Holtom") 
-    call append(line(".")+2, "\%% @Email   : 520023290@qq.com")
-    call append(line(".")+3, "\%% @Created : ".strftime("%c")) 
-    call append(line(".")+4, "\%% @doc ")
-    call append(line(".")+5, "\%% @end")
-    call append(line(".")+6, "\%%%-------------------------------------------------------------------")
-    call append(line(".")+7, "")
-    call append(line(".")+8, "")
-    call append(line(".")+9, "")
-    call append(line(".")+10, "\%%====================================================================")
-    call append(line(".")+11, "\%% API")
-    call append(line(".")+12, "\%%====================================================================")
-    call append(line(".")+13, "")
-    call append(line(".")+14, "")
-    call append(line(".")+15, "")
-    call append(line(".")+16, "\%%====================================================================")
-    call append(line(".")+17, "\%% Supervisor callbacks")
-    call append(line(".")+18, "\%%====================================================================")
-    call append(line(".")+19, "")
-    call append(line(".")+20, "")
-    call append(line(".")+21, "")
-    call append(line(".")+22, "\%%====================================================================")
-    call append(line(".")+23, "\%% Internal functions")
-    call append(line(".")+24, "\%%====================================================================")
-endfunc
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-execute pathogen#infect()
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-
 " Uncomment the next line to make Vim more Vi-compatible
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
 " options, so any other options should be set AFTER setting 'compatible'.
@@ -196,9 +160,9 @@ filetype plugin indent on    " required
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
-if has("syntax")
-  syntax on
-endif
+" if has("syntax")
+"   syntax on
+" endif
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
