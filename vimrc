@@ -40,6 +40,7 @@ Plugin 'vim-erlang/vim-erlang-omnicomplete'     " erlang补全插件
 Plugin 'vim-erlang/vim-erlang-tags'             " erlang跳转标志插件
 Plugin 'vim-gitgutter'                          " 修改时会显示修改与仓库版本的差异
 Plugin 'Valloric/YouCompleteMe'                 " 补全功能插件
+plugin 'iamcco/markdown-preview.vim'            " markdown预览
 Plugin 'VundleVim/Vundle.vim'
 
 call vundle#end()            " required
@@ -142,6 +143,15 @@ let g:go_highlight_extra_types = 1
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limeligth_conceal_ctermfg = 240
 let g:limelight_default_coefficient = 0.7
+
+" markdown-preview 插件设置
+let g:mkdp_path_to_chrome = "chrome"    " 设置预览窗口使用的浏览器(firefox或者chrome)，如果设置了该参数，g:mkdp_browserfunc将被忽略
+let g:mkdp_browserfunc = ''             " vim回调函数，参数为要打开的url
+let g:mkdp_auto_start = 1               " 设置为1可以在打开markdown文件的时候自动打开浏览器预览，只在打开markdown文件的时候打开一次
+let g:mkdp_auto_open = 1                " 设置为1在编辑markdown的时候检查预览窗口是否已经打开，否则会自动打开预览窗口
+let g:mkdp_auto_close = 1               " 在切换buffer的时候自动关闭预览窗口，设置为0则在切换buffer的时候不自动关闭预览窗口
+let g:mkdp_refresh_slow = 0             " 设置为1则只有在保存文件或者退出插入模式的时候更新预览，默认为0，实时更新预览
+let g:mkdp_command_for_global = 0       " 设置为1则所有文件都可以进行markdown-preview预览，默认为0，只有markdown文件可以预览
 
 map <F6> :NERDTreeToggle<CR>                    " 使用F6打开树目录结构
 nnoremap <C-k> :m-2<CR>     " 把当前行向上移动
