@@ -91,7 +91,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 " 设置侧边栏警告和错误提示开关和标志(1:打开 0:关闭)
-let g:syntastic_enable_signs = 0
+let g:syntastic_enable_signs = 1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='►'
 " 设置为1时总是打开Location List（相当于QuickFix）窗口
