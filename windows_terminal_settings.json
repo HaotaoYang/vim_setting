@@ -20,8 +20,8 @@
     "copyFormatting": false,
 
     "initialPosition": "20,15", // 启动窗口位置
-    "initialCols": 230,         // 启动窗口列数，必须小于或者等于vim中配置的列数
-    "initialRows": 55,          // 启动窗口行数，必须小于或者等于vim中配置的行数
+    "initialCols": 230,         // 启动窗口列数，建议与vim中配置的列数一致
+    "initialRows": 55,          // 启动窗口行数，建议与vim中配置的行数一致
 
     // A profile specifies a command to execute paired with information about how it should look and feel.
     // Each one of them will appear in the 'New Tab' dropdown,
@@ -55,7 +55,8 @@
                 "name": "Ubuntu-18.04",
                 "source": "Windows.Terminal.Wsl",
                 "colorScheme": "Solarized Dark",
-                "fontFace": "DejaVu Sans Mono for Powerline",   // 字体
+                // "fontFace": "DejaVu Sans Mono for Powerline",   // 字体
+                "fontFace": "DroidSansMono Nerd Font",          // 字体
                 "fontSize": 10,                                 // 字体大小
                 "cursorShape": "filledBox",                     // 实心光标
                 "cursorColor": "#FFFFFF"                        // 光标颜色(白色)

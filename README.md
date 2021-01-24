@@ -70,3 +70,8 @@ Plugin 'mileszs/ack.vim'
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 运行vim可以用 :Ack xxx 搜索项目代码
+
+=== 安装 `nerd-tree` 字体 ===
+-----
+
+如果使用了 `vim-devicons` 或者 `vim-nerdtree-syntax-highlight` 插件，可以选择 [Droid Sans Mono Nerd Font Complete.otf](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/DroidSansMono/complete) 这款字体，双击 `Droid Sans Mono Nerd Font Complete.otf` 即可安装，安装后就可以在终端选择字体了，字体名为 `"DroidSansMono Nerd Font"`。

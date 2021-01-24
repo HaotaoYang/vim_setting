@@ -28,7 +28,9 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'L9'
 Plugin 'mileszs/ack.vim'                        " 全局查找字符串
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'vim-devicons'                           " 图标显示插件(需要安装nerd-fonts[https://github.com/ryanoasis/nerd-fonts]字体，在使用的终端选择DroidSansMono Nerd Font字体)
 Plugin 'scrooloose/nerdtree'                    " 安装目录树插件
+Plugin 'vim-nerdtree-syntax-highlight'          " 目录树高亮设置插件
 Plugin 'scrooloose/syntastic'                   " 安装语法分析插件
 Plugin 'slashmili/alchemist.vim'                " elixir查找跳转功能
 Plugin 'szw/vim-tags'
@@ -54,7 +56,6 @@ packadd! dracula
 syntax enable
 colorscheme dracula
 
-set guifont=Bitstream_Vera_Sans_Mono:h10:cANSI  " 字体
 set nu                                          " 行号
 set lines=55                                    " 设置显示行数
 set columns=180                                 " 设置显示列数
@@ -158,7 +159,6 @@ nnoremap <C-k> :m-2<CR>     " 把当前行向上移动
 nnoremap <C-j> :m+1<CR>     " 把当前行向下移动
 nnoremap <C-h> :bp<CR>      " 项目内模块向左切换
 nnoremap <C-l> :bn<CR>      " 项目内模块向右切换
-set encoding=utf-8
 set langmenu=zh_CN.UTF-8
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
