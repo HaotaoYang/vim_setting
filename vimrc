@@ -42,7 +42,7 @@ Plugin 'vim-erlang/vim-erlang-omnicomplete'     " erlang补全插件
 Plugin 'vim-erlang/vim-erlang-tags'             " erlang跳转标志插件
 Plugin 'vim-gitgutter'                          " 修改时会显示修改与仓库版本的差异
 Plugin 'Valloric/YouCompleteMe'                 " 补全功能插件
-plugin 'iamcco/markdown-preview.vim'            " markdown预览
+Plugin 'iamcco/markdown-preview.vim'            " markdown预览
 Plugin 'VundleVim/Vundle.vim'
 
 call vundle#end()            " required
