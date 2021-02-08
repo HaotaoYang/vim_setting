@@ -26,24 +26,30 @@ make
 
 先安装pathogen.vim,在终端执行：
 
+```
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+```
 
 在vimrc中配置：
 
+```
 execute pathogen#infect()
 
 syntax on
 
 filetype plugin indent on
+```
 
 
 === plug.vim ===
 -----
 
+```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
 
 === dracula ===
@@ -55,6 +61,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 === 安装git插 ===
 -----
 
+```
 Plugin 'vim-gitgutter'          " 修改时会显示修改与仓库版本的差异
 
 Plugin 'junegunn/gv.vim'        " 查看git提交记录, 命令 :GV
@@ -64,6 +71,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-rhubarb'
 
 Plugin 'tpope/vim-fugitive'     " git包装器(这里注意:由于作者没有更新，使用这个命令安装后使用:GV命令查看提交记录时会有报错，可以到github上查看最新安装方式安装)
+```
 
 
 === 安装ctrlp插件 ===
@@ -81,9 +89,11 @@ Bundle 'ctrlpvim/ctrlp.vim'
 === 安装Ack ===
 -----
 
+```
 Plugin 'mileszs/ack.vim'
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
+```
 
 运行vim可以用 :Ack xxx 搜索项目代码
 
@@ -98,6 +108,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 -----
 
 安装完 `vim-go` 插件之后，执行 `:GoInstallBinaries` 开始交互式安装辅助工具(需要科学上网)
+
 
 === 安装[coc.nvim](https://github.com/neoclide/coc.nvim) coc补全 ===
 -----
