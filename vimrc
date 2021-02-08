@@ -17,7 +17,6 @@ call vundle#begin()
 
 Plugin 'bling/vim-airline'                      " 设置标签页插件
 Plugin 'ctrlpvim/ctrlp.vim'                     " 安装查找项目文件插件Ctrl + p
-Plugin 'elixir-lang/vim-elixir'                 " elixir语言插件
 Plugin 'fatih/vim-go'                           " go语言插件
 Plugin 'gcmt/wildfire.vim'                      " 按enter键进入块选择
 Plugin 'git://git.wincent.com/command-t.git'
@@ -32,14 +31,11 @@ Plugin 'vim-devicons'                           " 图标显示插件(需要安�
 Plugin 'scrooloose/nerdtree'                    " 安装目录树插件
 Plugin 'vim-nerdtree-syntax-highlight'          " 目录树高亮设置插件
 Plugin 'scrooloose/syntastic'                   " 安装语法分析插件
-Plugin 'slashmili/alchemist.vim'                " elixir查找跳转功能
 Plugin 'szw/vim-tags'
 Plugin 'tpope/vim-eunuch'                       "
 Plugin 'tpope/vim-fugitive'                     " git包装器(这里注意:由于作者没有更新，使用这个命令安装后使用:GV命令查看提交记录时会有报错，可以到github上查看最新安装方式安装)
 Plugin 'tpope/vim-rhubarb'
 Plugin 'vim-airline/vim-airline-themes'         " 标签页主题插件
-Plugin 'vim-erlang/vim-erlang-omnicomplete'     " erlang补全插件
-Plugin 'vim-erlang/vim-erlang-tags'             " erlang跳转标志插件
 Plugin 'vim-gitgutter'                          " 修改时会显示修改与仓库版本的差异
 Plugin 'Valloric/YouCompleteMe'                 " 补全功能插件
 Plugin 'iamcco/markdown-preview.vim'            " markdown预览
@@ -74,15 +70,11 @@ set expandtab                                   " tab转化为4个字符
 set mouse=a
 set noswapfile                                  " 编辑时不产生.swp文件
 set pastetoggle=<F10>                           " 粘贴时按F10取消自动缩进，粘贴完按F10打开自动缩进
-" let g:syntastic_enable_elixir_checker = 1
-" let g:syntastic_enable_erlang_checker = 1
 let g:ackprg = 'ag --nogroup --nocolor --column'
 hi Normal  ctermfg=252 ctermbg=none
 
 " 设置VIM状态栏
 set laststatus=2 "显示状态栏(默认值为1, 无法显示状态栏)
-
-" let g:erlang_tags_auto_update = 1               " 自动更新tags(vim-erlang-tags插件配置)
 
 set statusline+=%{FugitiveStatusline()}
 set statusline+=%{gutentags#statusline()}
