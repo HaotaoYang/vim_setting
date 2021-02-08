@@ -4,12 +4,14 @@ vim setting:
 === 安装、更新vim ===
 -----
 
-安装[vim](https://github.com/vim/vim.git)之后(Vim `8.1.1719` 版本以上)：
+安装[vim](https://github.com/vim/vim.git)之后：
 
 ```
 git clone https://github.com/vim/vim.git
-cd vim/src
+cd vim
+./configure --with-features=huge --enable-rubyinterp=yes -enable-python3interp=yes --enable-multibyte --with-python-config-dir=/usr/local/bin/python3 --enable-cscope
 make
+make install
 ```
 
 更新vim之前先查看一下python3的版本，输入python3可以看到，尽量安装比较新的版本（版本：3.9.1 or >= 3.6），装插件的时候会有要求，如果版本太低先重新安装pytion3，再安装vim。
