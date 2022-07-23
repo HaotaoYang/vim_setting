@@ -27,9 +27,9 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'L9'
 Plugin 'mileszs/ack.vim'                        " 全局查找字符串
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'vim-devicons'                           " 图标显示插件(需要安装nerd-fonts[https://github.com/ryanoasis/nerd-fonts]字体，在使用的终端选择DroidSansMono Nerd Font字体)
+Plugin 'ryanoasis/vim-devicons'                 " 图标显示插件(需要安装nerd-fonts[https://github.com/ryanoasis/nerd-fonts]字体，在使用的终端选择DroidSansMono Nerd Font字体)
 Plugin 'scrooloose/nerdtree'                    " 安装目录树插件
-Plugin 'vim-nerdtree-syntax-highlight'          " 目录树高亮设置插件
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'" 目录树高亮设置插件
 Plugin 'scrooloose/syntastic'                   " 安装语法分析插件
 Plugin 'szw/vim-tags'
 Plugin 'tpope/vim-eunuch'                       "
