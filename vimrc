@@ -70,8 +70,13 @@ set expandtab                                   " tab转化为4个字符
 set mouse=a
 set noswapfile                                  " 编辑时不产生.swp文件
 set pastetoggle=<F10>                           " 粘贴时按F10取消自动缩进，粘贴完按F10打开自动缩进
-let g:ackprg = 'ag --nogroup --nocolor --column'
+
 hi Normal  ctermfg=252 ctermbg=none
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" nerdtree 显示隐藏文件 shift+i可以切换
+let NERDTreeShowHidden=1
 
 " 设置VIM状态栏
 set laststatus=2 "显示状态栏(默认值为1, 无法显示状态栏)
